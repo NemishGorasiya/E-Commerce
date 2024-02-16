@@ -1,0 +1,89 @@
+.cardWrapper {
+  width: 20%;
+  padding: 15px 20px;
+  display: flex;
+  /* align-items: stretch; */
+}
+
+.cardWrapper .card {
+  width: 100%;
+  /* border: 2px solid black; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* border-radius: 10px; */
+  display: flex;
+  flex-direction: column;
+}
+.cardWrapper .card .cardImage {
+  padding: 0 5px;
+  width: 100%;
+  /* border-bottom: 1px solid grey; */
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardWrapper .card .cardImage img {
+  height: 90%;
+  width: 100%;
+  object-fit: contain;
+}
+.cardWrapper .card .cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0;
+  padding-left: 10px;
+  /* word-break: break-all; */
+}
+.cardWrapper .card .checkOut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+.cardWrapper .card .checkOut .price {
+  padding: 15px 0;
+  font-weight: 600;
+}
+.cardWrapper .card .checkOut .addToCartBtn {
+  margin: 15px;
+  padding: 8px;
+  background: green;
+  border-radius: 5px;
+  color: white;
+}
+.cardWrapper .card .ratings {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 10px;
+}
+.cardWrapper .card .cardDetails {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+@media only screen and (max-width: 1180px) {
+  .cardWrapper {
+    width: 25%;
+    padding: 15px 10px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .cardWrapper {
+    width: 33%;
+    padding: 15px 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .cardWrapper {
+    width: 50%;
+    padding: 15px 5px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .cardWrapper {
+    width: 100%;
+    padding: 15px 20px;
+  }
+}

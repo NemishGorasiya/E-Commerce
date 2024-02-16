@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+nav {
+  height: auto;
+  padding: 5px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+nav > button {
+  background: none;
+  border: none;
+  filter: invert(100%);
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+  display: none;
+}
+nav > button img {
+  height: 100%;
+  width: 100%;
+}
+nav .logo {
+  display: inline-block;
+  height: 85px;
+  width: 85px;
+}
+nav .logo img {
+  height: 100%;
+  width: 100%;
+}
+nav .navLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: end;
+  }
+  nav > button {
+    display: block;
+  }
+  nav .logo {
+    display: none;
+  }
+  nav .navLinks {
+    display: none;
+  }
+  nav.navOpen {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav.navOpen > button {
+    align-self: flex-end;
+  }
+  nav.navOpen .logo {
+    display: flex;
+  }
+  nav.navOpen .navLinks {
+    display: flex;
+    flex-direction: column;
+  }
+  nav.navOpen .navLinks ul {
+    text-align: center;
+  }
+  nav.navOpen .navLinks ul li {
+    display: block;
+    padding: 15px 0;
+  }
+}
+@media only screen and (max-width: 450px) {
+  nav {
+    align-items: start;
+  }
+  nav.navOpen {
+    width: 90%;
+  }
+  nav.navOpen > button {
+    align-self: end;
+  }
+  nav.navOpen .navLinks ul {
+    width: 100%;
+    text-align: start;
+    padding-left: 25px;
+  }
+}
