@@ -2,17 +2,21 @@ import "./Cart.css";
 
 import next from "../../assets/next.png";
 import CartProduct from "./CartProduct.jsx";
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext.jsx";
+import emptyCart from "../../assets/emptyCart.png"
 const Cart = () => {
+  const cartProducts = useContext(CartContext);
   return (
     <div className="cart">
       <h1 className="cartHeading">Shopping Cart</h1>
       <div className="cartWrapper">
         <div className="cartItems">
           <div className="cartProducts">
-            <CartProduct />
-            <CartProduct />
-            <CartProduct />
-            <CartProduct />
+            { cartProducts.cartProductsList.length === 0
+            ? <img className="emptyCart" src={emptyCart} alt="cart is empty" /> 
+            : cartProducts.cartProductsList.map((productData,idx)=><CartProduct key={idx} cartProductData={productData}/>)
+            }
           </div>
         </div>
         <div className="cartSummary">

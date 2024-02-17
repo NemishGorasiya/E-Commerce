@@ -40,10 +40,18 @@
   justify-content: center;
   align-items: center;
 }
+
 .cartWrapper .cartItems .cartProducts .cartProduct .productDetail img {
   height: 120px;
   width: 120px;
   margin-right: 20px;
+}
+
+.cartWrapper .cartItems .cartProducts > img.emptyCart {
+  height: auto;
+  width: 800px;
+  display: block;
+  margin: auto;
 }
 .cartWrapper
   .cartItems

@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DisplaySpecificCategory from "./DisplaySpecificCategory";
-import axios from "axios";
 import "./DisplayItems.css";
 
-const DisplayItems = () => {
-  const [products, setProducts] = useState([]);
+const DisplayItems = ({ products }) => {
+  console.log("after", products);
   const [category, setCategory] = useState("all");
-  const [filteredProductsList, setFilteredProductsList] = useState([]);
+  const [filteredProductsList, setFilteredProductsList] = useState(products);
+  console.log("after filter", filteredProductsList);
   function changeCategory({ target: { id } }) {
     if (category === id) {
       return;
@@ -24,21 +24,6 @@ const DisplayItems = () => {
       products.filter((ele) => ele.category === selectedCategory)
     );
   }
-
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get("https://fakestoreapi.com/products");
-      console.log(response);
-      setProducts(response.data);
-      setFilteredProductsList(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
 
   return (
     <div>
@@ -69,7 +54,11 @@ const DisplayItems = () => {
           </li>
         </ul>
       </div>
-      <DisplaySpecificCategory products={filteredProductsList} />
+      <DisplaySpecificCategory
+        products={
+          filteredProductsList.length === 0 ? products : filteredProductsList
+        }
+      />
     </div>
   );
 };

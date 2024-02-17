@@ -1,10 +1,13 @@
 import "./Card.css";
 import PropTypes from "prop-types";
 import star from "../assets/star.png";
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
 
 const Card = ({ product }) => {
-  const { image, price, rating, title } = product ?? {};
-
+  const { id, image, price, rating, title } = product ?? {};
+  const cartContext = useContext(CartContext);
+  // console.log("add", cartContext);
   return (
     <div className="cardWrapper">
       <div className="card">
@@ -32,7 +35,12 @@ const Card = ({ product }) => {
           </div>
           <div className="checkOut">
             <div className="price">$ {price}</div>
-            <div className="addToCartBtn">Add to cart</div>
+            <div
+              className="addToCartBtn"
+              onClick={() => cartContext.addToCart(id)}
+            >
+              Add to cart
+            </div>
           </div>
         </div>
       </div>
