@@ -10,8 +10,7 @@ const CartProduct = () => {
           alt="cart image"
         />
         <div className="productTitle">
-          {" "}
-          djshvjhsd sdjhubjhs djhsdbjhb sdjbsdjsd bag
+          bag wesdgbjhsd jcsdbjhbsd jhsdbjubsd sdjhbcjsh{" "}
         </div>
       </div>
       <div className="productPrice">

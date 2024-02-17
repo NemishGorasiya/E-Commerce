@@ -199,10 +199,30 @@
   .cartProduct {
     flex-wrap: wrap;
     width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .productDetail {
+    width: 100%;
+    text-align: start;
+    justify-content: flex-start !important;
+  }
+  .cartWrapper
+    .cartItems
+    .cartProducts
+    .cartProduct
+    .productDetail
+    .productTitle {
+    font-weight: 500;
+    font-size: 18px;
   }
   .cartProduct .productPrice,
   .cartProduct .cartFunctionBtns {
     margin-top: 20px;
+  }
+  .cartWrapper .cartItems .cartProducts .cartProduct button {
+    height: 18px;
+    width: 18px;
   }
   .cartWrapper .cartSummary .shipping select {
     width: 100%;
