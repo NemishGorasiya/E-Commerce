@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const navLinksLeft = ["Home", "Men", "Women"];
-export const navLinksRight = ["Contact", "About us"];
+export const navLinksRight = ["Contact", "About us", "Cart"];
 
 export const sliderImages = {
   img1: "src/assets/sliderimg1.jpg",

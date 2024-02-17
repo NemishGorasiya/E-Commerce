@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import DisplaySpecificCategory from "./DisplaySpecificCategory";
 import axios from "axios";
 import "./DisplayItems.css";
@@ -7,33 +7,28 @@ const DisplayItems = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("all");
   const [filteredProductsList, setFilteredProductsList] = useState([]);
-  function changeCategory(e) {
-    // console.log(e.target.id);
-    if (category === e.target.id) {
+  function changeCategory({ target: { id } }) {
+    if (category === id) {
       return;
     }
-    setCategory(e.target.id);
-    if (e.target.id === "all") {
+    setCategory(id);
+    if (id === "all") {
       setFilteredProductsList(products);
       return;
     }
-    filterProducts(e.target.id);
+    filterProducts(id);
   }
 
   function filterProducts(selectedCategory) {
-    // filteredProductsList = products.filter((ele) => {
-    //   return ele.category === selectedCategory;
-    // });
     setFilteredProductsList(
-      products.filter((ele) => {
-        return ele.category === selectedCategory;
-      })
+      products.filter((ele) => ele.category === selectedCategory)
     );
   }
 
   const fetchProducts = async () => {
     try {
       const response = await axios.get("https://fakestoreapi.com/products");
+      console.log(response);
       setProducts(response.data);
       setFilteredProductsList(response.data);
     } catch (error) {

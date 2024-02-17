@@ -50,12 +50,39 @@
   background: green;
   border-radius: 5px;
   color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.cardWrapper .card .checkOut .addToCartBtn:hover {
+  outline: 1px solid green;
+  background: #fff;
+  color: green;
 }
 .cardWrapper .card .ratings {
   display: flex;
   justify-content: start;
   align-items: center;
   padding-left: 10px;
+  height: 50px;
+}
+.cardWrapper .card .ratings .stars {
+  width: 100px;
+  height: 18px;
+  margin: 0 5px 0 8px;
+  position: relative;
+  z-index: -1;
+}
+.cardWrapper .card .ratings .starBackground {
+  position: absolute;
+  background: orange;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  mix-blend-mode: screen;
+}
+.cardWrapper .card .ratings .stars img {
+  height: 100%;
+  width: 20%;
 }
 .cardWrapper .card .cardDetails {
   flex: 1 1 auto;

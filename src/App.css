@@ -6,6 +6,9 @@
 body {
   font-family: "Inter", sans-serif;
 }
+body button {
+  cursor: pointer;
+}
 nav {
   height: auto;
   padding: 5px;
@@ -48,6 +51,19 @@ nav ul {
 nav ul li {
   display: inline-block;
   margin: 5px 10px;
+  transition: all 0.3s ease;
+}
+nav ul li:hover {
+  color: grey;
+  cursor: pointer;
+}
+nav ul li Link:hover {
+  color: grey;
+  cursor: pointer;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 @media only screen and (max-width: 600px) {
