@@ -9,9 +9,7 @@ const CartProduct = () => {
           src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
           alt="cart image"
         />
-        <div className="productTitle">
-          bag wesdgbjhsd jcsdbjhbsd jhsdbjubsd sdjhbcjsh{" "}
-        </div>
+        <div className="productTitle">bag nbvbd fdjbjfd </div>
       </div>
       <div className="productPrice">
         <span>$32 x (5 item)</span>
