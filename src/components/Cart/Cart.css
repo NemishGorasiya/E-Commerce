@@ -171,3 +171,61 @@
   background: white;
   color: black;
 }
+
+@media only screen and (max-width: 1180px) {
+  .cartWrapper
+    .cartItems
+    .cartProducts
+    .cartProduct
+    .cartFunctionBtns
+    .productRemoveBtn {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .cartWrapper {
+    flex-direction: column;
+  }
+  .cartWrapper .cartItems {
+    width: 100%;
+  }
+  .cartWrapper .cartSummary {
+    margin: 75px 0;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .cartProduct {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .cartProduct .productPrice,
+  .cartProduct .cartFunctionBtns {
+    margin-top: 20px;
+  }
+  .cartWrapper .cartSummary .shipping select {
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 5px;
+  }
+  .cartWrapper .cartSummary .coupon input {
+    height: 30px;
+    font-size: 15px;
+  }
+  .cartWrapper .cartSummary .coupon .couponInput img {
+    height: 20px;
+    width: 20px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .cartProduct .productPrice {
+    width: 100%;
+    text-align: center;
+  }
+  .cartFunctionBtns {
+    width: 100%;
+    justify-content: center;
+  }
+}
