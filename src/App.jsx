@@ -1,9 +1,9 @@
 import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Nav from "./components/Nav.jsx";
-import Slider from "./components/Slider.jsx";
-import DisplayItems from "./components/DisplayItems.jsx";
+import Nav from "./components/Nav/Nav.jsx";
+import Slider from "./components/Slider/Slider.jsx";
+import DisplayItems from "./components/ProductDisplay/DisplayItems.jsx";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./components/Cart/Cart.jsx";
 import { CartContextProvider } from "./Context/CartContext.jsx";
@@ -12,7 +12,6 @@ function App() {
   const fetchProducts = async () => {
     try {
       const response = await axios.get("https://fakestoreapi.com/products");
-      console.log(response);
       setProducts(response.data);
     } catch (error) {
       console.log(error);

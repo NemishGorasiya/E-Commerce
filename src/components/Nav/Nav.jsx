@@ -1,11 +1,12 @@
 import { useState } from "react";
-import logo from "../assets/logo.png";
-import listIcon from "../assets/list.png";
-import closeIcon from "../assets/close.png";
-import { navLinksLeft } from "../data.js";
-import { navLinksRight } from "../data.js";
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import listIcon from "../../assets/list.png";
+import closeIcon from "../../assets/close.png";
+import { navLinksLeft } from "../../constant.js";
+import { navLinksRight } from "../../constant.js";
 import NavUl from "./NavUl.jsx";
-
+import "./Nav.css";
 export default function Nav() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -18,7 +19,9 @@ export default function Nav() {
         <img src={isNavOpen ? closeIcon : listIcon} />
       </button>
       <div className="logo">
-        <img src={logo} />
+        <Link to="/">
+          <img src={logo} alt="" />
+        </Link>
       </div>
       <div className="navLinks">
         <NavUl navLinks={navLinksLeft} />

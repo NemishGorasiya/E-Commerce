@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import Card from "./Card";
+import Card from "../Card/Card";
 
 import "./DisplaySpecificCategory.css";
 const DisplaySpecificCategory = ({ products }) => {

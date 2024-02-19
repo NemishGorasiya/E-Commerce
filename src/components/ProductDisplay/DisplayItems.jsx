@@ -3,10 +3,8 @@ import DisplaySpecificCategory from "./DisplaySpecificCategory";
 import "./DisplayItems.css";
 
 const DisplayItems = ({ products }) => {
-  console.log("after", products);
   const [category, setCategory] = useState("all");
   const [filteredProductsList, setFilteredProductsList] = useState(products);
-  console.log("after filter", filteredProductsList);
   function changeCategory({ target: { id } }) {
     if (category === id) {
       return;

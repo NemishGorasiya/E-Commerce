@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { sliderImages } from "../data.js";
+import { sliderImages } from "../../constant.js";
 import "./Slider.css";
 export default function Slider() {
   const data = Object.values(sliderImages);
