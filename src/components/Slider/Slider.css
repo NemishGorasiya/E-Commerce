@@ -3,7 +3,6 @@
   display: flex;
   width: 100%;
   overflow: hidden;
-  margin: 1px 0;
 }
 .slider .slide {
   min-height: 600px;

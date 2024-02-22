@@ -1,14 +1,20 @@
 import "./Card.css";
 import PropTypes from "prop-types";
 import star from "../../assets/star.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
-
+import { Link } from "react-router-dom";
 const Card = ({ product }) => {
+  const [inCart, setInCart] = useState(false);
   const { id, image, price, rating, title } = product ?? {};
   const cartContext = useContext(CartContext);
-  // console.log("add", cartContext);
-
+  useEffect(() => {
+    cartContext.cartProductsList.forEach((ele) => {
+      if (ele.id === id) {
+        setInCart(true);
+      }
+    });
+  }, [inCart]);
   return (
     <div className="cardWrapper">
       <div className="card">
@@ -19,7 +25,7 @@ const Card = ({ product }) => {
           <div className="titleWrapper">
             <div className="cardTitle">{title}</div>
             <div className="ratings">
-              <span className="ratingRate">{rating.rate}</span>
+              <span className="ratingRate">{rating.rate.toFixed(1)}</span>
               <div className="stars">
                 <img src={star} alt="sdfd" />
                 <img src={star} alt="sdfd" />
@@ -36,11 +42,15 @@ const Card = ({ product }) => {
           </div>
           <div className="checkOut">
             <div className="price">$ {price}</div>
+
             <div
-              className="addToCartBtn"
-              onClick={() => cartContext.addToCart(id)}
+              className={inCart ? "addToCartBtn goToCart" : "addToCartBtn"}
+              onClick={() => {
+                cartContext.addToCart(id);
+                setInCart(true);
+              }}
             >
-              Add to cart
+              {inCart ? <Link to="/cart">Go To Cart</Link> : "Add To Cart"}
             </div>
           </div>
         </div>

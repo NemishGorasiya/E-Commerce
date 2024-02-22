@@ -53,10 +53,17 @@
   transition: all 0.3s ease;
   cursor: pointer;
 }
+.cardWrapper .card .checkOut .goToCart {
+  background: orange;
+}
 .cardWrapper .card .checkOut .addToCartBtn:hover {
   outline: 1px solid green;
   background: #fff;
   color: green;
+}
+.cardWrapper .card .checkOut .goToCart:hover {
+  outline: 1px solid orange;
+  color: orange;
 }
 .cardWrapper .card .ratings {
   display: flex;
@@ -102,10 +109,10 @@
     padding: 15px 10px;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
   .cardWrapper {
     width: 50%;
-    padding: 15px 5px;
+    padding: 15px 10px;
   }
 }
 @media only screen and (max-width: 500px) {

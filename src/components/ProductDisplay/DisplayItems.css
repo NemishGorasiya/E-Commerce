@@ -7,7 +7,7 @@
   align-items: center;
   margin: 50px 0;
   position: sticky;
-  top: 0;
+  top: 125px;
   opacity: 0.7;
 }
 .categories ul {
@@ -38,6 +38,14 @@
 .categories ul li:hover::after {
   transform: scale(1);
 }
+.breadCrumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.breadCrumb {
+  list-style: none;
+}
 
 @media only screen and (max-width: 900px) {
   .categories ul li {
@@ -46,6 +54,9 @@
   }
 }
 @media only screen and (max-width: 600px) {
+  .categories {
+    top: 90px;
+  }
   .categories ul li {
     margin: 0 10px;
   }

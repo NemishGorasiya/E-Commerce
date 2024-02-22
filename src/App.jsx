@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import Cart from "./components/Cart/Cart.jsx";
 import { CartContextProvider } from "./Context/CartContext.jsx";
 function App() {
+  // console.log(location);
   const [products, setProducts] = useState([]);
   const fetchProducts = async () => {
     try {

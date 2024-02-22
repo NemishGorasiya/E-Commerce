@@ -5,6 +5,10 @@ nav {
   color: #fff;
   display: flex;
   align-items: center;
+  width: 100%;
+  z-index: 999;
+  position: sticky;
+  top: 0;
 }
 nav > button {
   background: none;
@@ -83,6 +87,16 @@ nav .navLinks ul li.cartIconWrapper:not([data-qty="0"])::after {
   z-index: 99;
 }
 
+.breadCrumb {
+  height: 30px;
+  position: sticky;
+  width: 100%;
+  top: 95px;
+  z-index: 99;
+  background: grey;
+  color: #fff;
+}
+
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -121,6 +135,9 @@ nav .navLinks ul li.cartIconWrapper:not([data-qty="0"])::after {
   nav.navOpen .navLinks ul li {
     display: block;
     padding: 15px 0;
+  }
+  .breadCrumb {
+    top: 60px;
   }
 }
 @media only screen and (max-width: 450px) {

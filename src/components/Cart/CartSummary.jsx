@@ -92,15 +92,54 @@ const CartSummary = () => {
           />
         </div>
       </div>
-      <hr />
-      <div className="finalPrice">
+      {/* <hr /> */}
+      <div className="priceSummary">
+        <div className="finalPrice">
+          <span>TOTAL PRICE</span>
+          <span>
+            {cartProductsContext.totalPrice <= 0
+              ? (0).toFixed(2)
+              : cartProductsContext.totalPrice.toFixed(2)}
+          </span>
+        </div>
+        <div className="finalPrice">
+          <span>SHIPPING PRICE</span>
+          <span>
+            +{" "}
+            {cartProductsContext.totalPrice === 0 ||
+            cartProductsContext.totalItems === 0
+              ? (0).toFixed(2)
+              : shippingCharges.toFixed(2)}
+          </span>
+        </div>
+        <div className="finalPrice">
+          <span>DISCOUNT</span>
+          <span>
+            -{" "}
+            {(
+              (discountPercentage * cartProductsContext.totalPrice) /
+              100
+            ).toFixed(2)}
+          </span>
+        </div>
+        <hr />
+        <div className="finalPrice">
+          <span>EFFECTIVE PRICE</span>
+          <span>
+            {calcEffectivePrice() <= 0
+              ? (0).toFixed(2)
+              : calcEffectivePrice().toFixed(2)}
+          </span>
+        </div>
+      </div>
+      {/* <div className="finalPrice">
         <span>TOTAL PRICE</span>
         <span>
           {calcEffectivePrice() <= 0
             ? (0).toFixed(2)
             : calcEffectivePrice().toFixed(2)}
         </span>
-      </div>
+      </div> */}
       <button className="cartCheckoutBtn">CHECKOUT</button>
     </div>
   );
