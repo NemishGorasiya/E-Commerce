@@ -116,10 +116,12 @@ const CartSummary = () => {
           <span>DISCOUNT</span>
           <span>
             -{" "}
-            {(
-              (discountPercentage * cartProductsContext.totalPrice) /
-              100
-            ).toFixed(2)}
+            {(discountPercentage * cartProductsContext.totalPrice) / 100 <= 0
+              ? (0).toFixed(2)
+              : (
+                  (discountPercentage * cartProductsContext.totalPrice) /
+                  100
+                ).toFixed(2)}
           </span>
         </div>
         <hr />

@@ -5,10 +5,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin: 50px 0 0 0;
   position: sticky;
   top: 125px;
   opacity: 0.7;
+  z-index: 1;
 }
 .categories ul {
   list-style: none;
@@ -45,6 +46,62 @@
 }
 .breadCrumb {
   list-style: none;
+}
+.filters {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 35px;
+  margin: 20px 0;
+}
+.filters .searchProduct {
+  padding-left: 7px;
+}
+.sortProductWrapper {
+  position: relative;
+  display: flex;
+  width: 150px;
+  height: 30px;
+  margin-left: 15px;
+  color: #fff;
+}
+.sortProductWrapper::after {
+  content: "\25BC";
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 30px;
+  width: 30px;
+  background: #2b2e2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.filters .sortProduct {
+  color: #fff;
+  padding-left: 5px;
+  appearance: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background: #5c6664;
+  cursor: pointer;
+  flex: 1;
+  z-index: 0;
+}
+.filters .clearFilter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-left: 15px;
+  padding: 5px;
+  cursor: pointer;
+}
+.noMatchFound {
+  margin: 200px auto;
+  text-align: center;
 }
 
 @media only screen and (max-width: 900px) {

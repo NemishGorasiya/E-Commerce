@@ -11,6 +11,14 @@ export const sliderImages = {
   img5: "src/assets/sliderimg5.jpg",
 };
 
+export const productCategories = [
+  "all",
+  "men's clothing",
+  "women's clothing",
+  "electronics",
+  "jewelery",
+];
+
 // async function fetchData() {
 //   const response = await axios.get("https://fakestoreapi.com/products");
 //   return response.data;

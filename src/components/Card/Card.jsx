@@ -51,6 +51,7 @@ const Card = ({ product }) => {
               }}
             >
               {inCart ? <Link to="/cart">Go To Cart</Link> : "Add To Cart"}
+              <div className="btnBackground"></div>
             </div>
           </div>
         </div>

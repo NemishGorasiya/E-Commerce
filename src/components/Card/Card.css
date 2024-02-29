@@ -47,23 +47,42 @@
 .cardWrapper .card .checkOut .addToCartBtn {
   margin: 15px;
   padding: 8px;
-  background: green;
   border-radius: 5px;
-  color: white;
+  color: green;
   transition: all 0.3s ease;
   cursor: pointer;
+  border: 1px solid green;
+  position: relative;
+  z-index: 99;
 }
-.cardWrapper .card .checkOut .goToCart {
-  background: orange;
+.cardWrapper .card .checkOut .addToCartBtn .btnBackground {
+  background: green;
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  z-index: -1;
 }
 .cardWrapper .card .checkOut .addToCartBtn:hover {
-  outline: 1px solid green;
-  background: #fff;
-  color: green;
+  color: #fff;
 }
-.cardWrapper .card .checkOut .goToCart:hover {
-  outline: 1px solid orange;
+.cardWrapper .card .checkOut .goToCart .btnBackground {
+  background: orange;
+}
+.cardWrapper .card .checkOut .goToCart {
+  border: 1px solid orange;
   color: orange;
+  background: transparent;
+}
+.cardWrapper .card .checkOut .addToCartBtn:hover .btnBackground {
+  width: 100%;
+  transform-origin: left;
+}
+.cardWrapper .card .checkOut .goToCart:hover .btnBackground {
+  width: 100%;
+  transform-origin: left;
 }
 .cardWrapper .card .ratings {
   display: flex;
